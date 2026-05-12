@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>솜깅 3D 미리보기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h1>3D 미리보기</h1>
+
+            <div class="control-group">
+                <label for="height">높이 (cm):</label>
+                <input type="number" id="height" value="30" min="10" max="100" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="width">길이 (cm):</label>
+                <input type="number" id="width" value="30" min="10" max="100" step="1">
+            </div>
+
+            <div class="control-group">
+                <label for="compressionVertical">눌린 정도 (상하) (%):</label>
+                <input type="number" id="compressionVertical" value="15" min="0" max="50" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="compressionHorizontal">눌린 정도 (가로 앞뒤) (%):</label>
+                <input type="number" id="compressionHorizontal" value="10" min="0" max="50" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="compressionSide">눌린 정도 (가로 양옆) (%):</label>
+                <input type="number" id="compressionSide" value="40" min="0" max="50" step="5">
+            </div>
+
+            <div class="control-group">
+                <label for="frontImage">앞면 이미지:</label>
+                <input type="file" id="frontImage" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <label for="backImage">뒷면 이미지:</label>
+                <input type="file" id="backImage" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <label for="accessoryImage">액세서리 이미지:</label>
+                <input type="file" id="accessoryImage" accept="image/*">
+            </div>
+
+            <button id="mandooMode">만두인형</button>
+            <button id="toggleLighting">조명 끄기</button>
+            <button id="resetCamera">카메라 리셋</button>
+        </div>
+
+        <div class="viewer">
+            <canvas id="canvas3d"></canvas>
+            <div class="instructions">
+                마우스로 드래그하여 회전 | 휠로 확대/축소
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
